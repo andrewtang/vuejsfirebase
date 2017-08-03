@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -11,6 +12,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  plugins: [                                                 // <----- Create plugin array
+       new ExtractTextPlugin({ filename: 'css/[name].css', disable: false, allChunks: true })  // <----- Add ExtractTextPlugin plugin
+  ],
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -36,6 +40,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
+      },
+      {                                                                   // <------ Create a new JSON object to add a CSS loader.
+        test: /\.css$/,                                                   // <------ This tells Webpack that we want to handle css files.
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })   // <------ this tells Webpack *how* to handle css files.
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

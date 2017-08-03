@@ -1,17 +1,14 @@
 <template>
-  <div id="app" class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="page-header">
-          <h1>List your favourite books!</h1>
+  <div id="app" class="fl w-100">
+    <div class="ph5 ph5-ns">
+      <div class="">
+        <div class="">
+          <h2 class="f2">Book Store</h2>
         </div>
-
         <hr>
-
         <form class="form-inline " v-on:submit.prevent="addBook">
           <label class="sr-only" for="bookTitle">Title</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="bookTitle" placeholder="Title" required v-model="newBook.title">
-
           <label class="sr-only" for="bookAuthor">Author</label>
           <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="bookAuthor" placeholder="Author" required v-model="newBook.author">
 
@@ -28,10 +25,11 @@
       </div>
     </div>
     <br>
+    <div class="ph5 ph5-ns">
     <h3 class="">Book Cards</h3>
     <br>
-    <div class="card-columns row">
-      <div  v-for="book in books" class="col-md-4">
+    <div class="">
+      <div  v-for="book in books" class="mw5 bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
         <div class="card text-center margin" style="width: 20rem;">
           <div class="card-block">
             <h4 class="card-title"> {{book.title}}</h4>
@@ -42,7 +40,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
 </template>
