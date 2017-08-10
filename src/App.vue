@@ -26,7 +26,7 @@
     </div>
     <br>
     <div class="ph5 ph5-ns">
-    <h3 class="">Book Cards</h3>
+    <h3 class="">Book Cards2</h3>
     <br>
     <div class="w-100">
       <div v-for="book in books" class="fl ma2 w5 bg-white pa3 pa4-ns mv3 ba b--black-10">
