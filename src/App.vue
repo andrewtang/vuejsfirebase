@@ -8,12 +8,12 @@
         <hr>
         <form class="form-inline " v-on:submit.prevent="addBook">
           <label class="sr-only" for="bookTitle">Title</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="bookTitle" placeholder="Title" required v-model="newBook.title">
+          <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookTitle" placeholder="Title" required v-model="newBook.title">
           <label class="sr-only" for="bookAuthor">Author</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="bookAuthor" placeholder="Author" required v-model="newBook.author">
+          <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookAuthor" placeholder="Author" required v-model="newBook.author">
 
           <label class="sr-only" for="bookUrl">Url</label>
-          <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="bookUrl" value="sadasdasdasd" required v-model="newBook.url">
+          <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookUrl" value="sadasdasdasd" required v-model="newBook.url">
 
           <button type="submit" class="btn btn-success">
             <i class="fa fa-plus" aria-hidden="true"></i> Add
@@ -30,9 +30,9 @@
     <br>
     <div class="w-100">
       <div v-for="book in books" class="fl ma2 w5 bg-white pa3 pa4-ns mv3 ba b--black-10">
-        <div class="card text-center margin" style="width: 20rem;">
+        <div class="card text-center margin" style="">
           <div class="card-block">
-            <h4 class="card-title"> {{book.title}}</h4>
+            <h4 class="card-title">{{book.title}}</h4>
             <p class="card-text"> {{book.author}}</p>
             <p class="card-text"> {{book.description}}</p>
             <a v-bind:href="book.url" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i></a>
