@@ -28,8 +28,8 @@
     <div class="ph5 ph5-ns">
     <h3 class="">Book Cards</h3>
     <br>
-    <div class="">
-      <div  v-for="book in books" class="mw5 bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+    <div class="w-100">
+      <div v-for="book in books" class="fl ma2 w5 bg-white pa3 pa4-ns mv3 ba b--black-10">
         <div class="card text-center margin" style="width: 20rem;">
           <div class="card-block">
             <h4 class="card-title"> {{book.title}}</h4>
@@ -40,7 +40,9 @@
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
+
+  </div>
   </div>
 
 </template>
