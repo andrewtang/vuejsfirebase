@@ -1,10 +1,8 @@
 <template>
-  <div id="app" class="fl w-100">
+  <div id="app" class="">
     <div class="ph5 ph5-ns">
       <div class="">
-        <div class="">
-          <h2 class="f2">Book Store</h2>
-        </div>
+          <h2 class="f2">Book2 Store</h2>
         <hr>
         <form class="form-inline " v-on:submit.prevent="addBook">
           <label class="sr-only" for="bookTitle">Title</label>
@@ -14,6 +12,9 @@
 
           <label class="sr-only" for="bookUrl">Url</label>
           <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookUrl" value="sadasdasdasd" required v-model="newBook.url">
+
+          Book Cover Image URL<label class="sr-only" for="bookCover">Url</label>
+          <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookCover" value="sadasdasdasd" required v-model="newBook.cover">
 
           <button type="submit" class="btn btn-success">
             <i class="fa fa-plus" aria-hidden="true"></i> Add
@@ -26,23 +27,23 @@
     </div>
     <br>
     <div class="ph5 ph5-ns">
-    <h3 class="">Book Cards2</h3>
-    <br>
-    <div class="w-100">
-      <div v-for="book in books" class="fl ma2 w5 bg-white pa3 pa4-ns mv3 ba b--black-10">
-        <div class="card text-center margin" style="">
-          <div class="card-block">
-            <h4 class="card-title">{{book.title}}</h4>
-            <p class="card-text"> {{book.author}}</p>
-            <p class="card-text"> {{book.description}}</p>
-            <a v-bind:href="book.url" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i></a>
-            <i class="fa fa-trash-o right" aria-hidden="true" v-on:click="removeBook(book)"></i>
+      <h3 class="">Book Cards</h3>
+      <br>
+      <div class="w-100">
+        <div v-for="book in books" class="b--dashed bg-lightest-blue dark-green fl ma2 w5 pa3 pa4-ns mv3 ba b--black-10">
+          <div class="card text-center margin" style="">
+            <div class="card-block">
+              <img v-bind:src="book.cover" alt="Book Image Outline" class="w-100 db outline black-10"/>
+              <h4 class="card-title">{{book.title}}</h4>
+              <p class="card-text"> {{book.author}}</p>
+              <p class="card-text"> {{book.description}}</p>
+              <a v-bind:href="book.url" target="_blank"> <i class="fa fa-search" aria-hidden="true"></i> <span class="b "> Go to URL</span></a>
+              <i class="fa fa-trash-o right" aria-hidden="true" v-on:click="removeBook(book)"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
   </div>
 
 </template>
@@ -95,7 +96,8 @@ export default {
       newBook: {
         title: '',
         author: '',
-        url: 'http://'
+        url: 'http://',
+        cover: 'http://'
       }
     }
   },
@@ -105,6 +107,7 @@ export default {
       this.newBook.title = '';
       this.newBook.author = '';
       this.newBook.url = 'http://';
+      this.newBook.cover = 'http://';
       toastr.success("Book added");
     },
     removeBook: function(book){
@@ -126,5 +129,9 @@ export default {
 
 .card-heading h3{
   margin: 20px;
+}
+
+.card-block {
+
 }
 </style>
