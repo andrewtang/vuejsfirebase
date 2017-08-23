@@ -1,9 +1,17 @@
 <template>
   <div id="app" class="">
     <div class="ph5 ph5-ns">
-      <div class="">
-          <h2 class="f2">Book2 Store</h2>
+        <div class="db dt-ns center w-100">
+          <div class="w-50 dtc-ns tl">
+            <h2 class="f2">Book Store</h2>
+          </div>
+          <div class="w-100 dtc-ns tr">
+            <a class="f4 link dim br1 ph3 pv2 mb2 dib white bg-gray" href="#0">Sign up</a>
+            <a class="f4 link dim br1 ph3 pv2 mb2 dib white bg-green" href="#0">Log in</a>
+          </div>
+        </div>
         <hr>
+
         <form class="form-inline " v-on:submit.prevent="addBook">
           <label class="sr-only" for="bookTitle">Title</label>
           <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookTitle" placeholder="Title" required v-model="newBook.title">
@@ -16,16 +24,17 @@
           Book Cover Image URL<label class="sr-only" for="bookCover">Url</label>
           <input type="text" class="form-control pa1 ma2 mb-2 mr-sm-2 mb-sm-0" id="bookCover" value="sadasdasdasd" required v-model="newBook.cover">
 
-          <button type="submit" class="btn btn-success">
+          <button type="submit" class="add-button f4 link grow br1 ph3 pv2 mb2 dib white bg-blue">
             <i class="fa fa-plus" aria-hidden="true"></i> Add
           </button>
 
         </form>
         <hr>
 
-      </div>
     </div>
+
     <br>
+
     <div class="ph5 ph5-ns">
       <h3 class="">Book Cards</h3>
       <br>
@@ -44,6 +53,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 </template>
@@ -124,9 +134,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
+.add-button {
+  border: 0px;
+}
 .card-heading h3{
   margin: 20px;
 }
