@@ -3,7 +3,7 @@
     <div class="ph5 ph5-ns">
         <div class="db dt-ns center w-100">
           <div class="w-50 dtc-ns tl">
-            <h2 class="f2">Book Store</h2>
+            <h2 class="f2">Book Shelf</h2>
           </div>
           <div class="w-100 dtc-ns tr">
             <a class="f4 link dim br1 ph3 pv2 mb2 dib white bg-gray" href="#0">Sign up</a>
